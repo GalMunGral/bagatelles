@@ -1,0 +1,22 @@
+{
+  "text": {
+    "name": "InputText",
+    "modulePath": "./src/components/InputText"
+  },
+  "number": {
+    "name": "InputNumber",
+    "modulePath": "./src/components/InputNumber"
+  },
+  "solid-color": {
+    "name": "WhateverThisShouldBeCalled",
+    "modulePath": "./this/is/a/test/Rect"
+  },
+  "button": {
+    "name": "ButtonFromReactBootstrap",
+    "modulePath": "react-bootstrap/Button"
+  },
+  "currency": {
+    "name": "Currency",
+    "modulePath": "./src/components/Currency"
+  }
+}
