@@ -1,0 +1,22 @@
+{
+  "name": "ahql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalMunGral/ahql.git"
+  },
+  "author": "Winnie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GalMunGral/ahql/issues"
+  },
+  "homepage": "https://github.com/GalMunGral/ahql#readme",
+  "dependencies": {
+    "typescript": "^4.1.5"
+  }
+}
