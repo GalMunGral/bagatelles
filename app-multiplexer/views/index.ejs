@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <% apps.forEach((app) => { %>
+    <a data-port="<%- app.port %>" href="#">Go to: <%- app.id %></a>
+  <% }) %>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[data-port]').forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          const port = e.target.dataset.port;
+          document.cookie = `PORT=${port}`;
+          location.href = '/';
+        })
+      });
+    });
+  </script>
+</body>
+
+</html>
