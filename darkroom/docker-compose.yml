@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    privileged: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - chromedp
+  chromedp:
+    image: chromedp/headless-shell
+
