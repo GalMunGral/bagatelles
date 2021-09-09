@@ -1,0 +1,6 @@
+node_modules/
+output/
+dist/
+*.pdf
+*.ttf
+.DS_Store
