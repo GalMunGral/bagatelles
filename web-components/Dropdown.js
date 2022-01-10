@@ -1,4 +1,4 @@
-import { ComplexFilter } from "./ComplexFillter/index.js";
+import { ComplexFilter } from "./ComplexFilter/index.js";
 import { BasicFilter } from "./BasicFilter.js";
 
 export class Dropdown extends HTMLElement {
