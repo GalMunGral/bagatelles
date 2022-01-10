@@ -13,6 +13,7 @@ export class Dropdown extends HTMLElement {
     this.#filter = value;
     this.updateContent();
   }
+
   updateContent() {
     const Class = this.#filter.type == "complex" ? ComplexFilter : BasicFilter;
     if (!this.#cache.has(this.#filter)) {

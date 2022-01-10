@@ -1,8 +1,9 @@
 export class ComplexFilterLeft extends HTMLElement {
-  parent;
   #root;
   #group;
   #filter;
+
+  parent;
 
   constructor() {
     super();

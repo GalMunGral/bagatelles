@@ -24,10 +24,9 @@ export class ComplexFilter extends HTMLElement {
   }
 
   updateContent() {
-    const left = this.#root.querySelector("complex-filter-left");
-    left.filter = this.#filter;
-    left.group = this.#group;
-    this.#root.querySelector("complex-filter-right").group = this.#group;
+    this.#left.filter = this.#filter;
+    this.#left.group = this.#group;
+    this.#right.group = this.#group;
   }
 
   render() {
