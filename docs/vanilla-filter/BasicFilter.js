@@ -1,4 +1,4 @@
-import { liveConfig } from "../config.js";
+import { liveConfig } from "./config.js";
 export class BasicFilter extends HTMLElement {
   #root;
   #filter = [];
