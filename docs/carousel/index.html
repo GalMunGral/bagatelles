@@ -3,6 +3,10 @@
 <meta name="viewport" content="width=320; user-scalable=no">
 
 <style>
+  body {
+    font-family: sans-serif;
+  }
+
   #container {
     position: relative;
     padding: 50px;
@@ -13,7 +17,7 @@
   #group1,
   #group2 {
     height: 100px;
-    perspective: 1000px;
+    perspective: 500px;
     transform-style: preserve-3d;
   }
 
@@ -24,6 +28,15 @@
   #group2 {
     perspective-origin: top;
     transform: translateY(20px);
+  }
+
+  #board {
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
   }
 
   .item {
@@ -43,19 +56,13 @@
     color: white;
     transition: transform 0.2s, opacity 0.2s;
   }
-
-  .board {
-    background: white;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
 </style>
 
+<input id="toggle" type="checkbox">
+<label>reveal all</label>
+
 <div id="container">
-  <div class="board"></div>
+  <div id="board"></div>
   <div id="group1">
     <div class="item">1</div>
     <div class="item">2</div>
@@ -90,18 +97,25 @@
   window.onload = () => {
     const step = 360 / group1.children.length;
     let rotateY = 0;
+    let revealAll = toggle.checked;
 
     const updateView = () => {
+      board.style.opacity = revealAll ? 0 : 1;
       [...group1.children].forEach((e, i, arr) => {
         const d = 360 * i / arr.length + rotateY;
         e.style.transform = `rotateY(${d}deg) translateZ(100px)`;
-        e.style.opacity = Math.cos(d * Math.PI / 180);
+        e.style.opacity = revealAll ? 1 : Math.cos(d * Math.PI / 180);
       });
       [...group2.children].forEach((e, i, arr) => {
         const d = 360 * i / arr.length - rotateY;
         e.style.transform = `rotateY(${d}deg) translateZ(100px)`;
-        e.style.opacity = Math.cos(d * Math.PI / 180);
+        e.style.opacity = revealAll ? 1 : Math.cos(d * Math.PI / 180);
       });
+    }
+
+    toggle.onchange = () => {
+      revealAll = toggle.checked;
+      updateView();
     }
 
     let mouseDown = false;
