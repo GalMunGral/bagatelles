@@ -102,12 +102,12 @@
     const updateView = () => {
       board.style.opacity = revealAll ? 0 : 1;
       [...group1.children].forEach((e, i, arr) => {
-        const d = 360 * i / arr.length + rotateY;
+        const d = 360 * i / arr.length - rotateY;
         e.style.transform = `rotateY(${d}deg) translateZ(100px)`;
         e.style.opacity = revealAll ? 1 : Math.cos(d * Math.PI / 180);
       });
       [...group2.children].forEach((e, i, arr) => {
-        const d = 360 * i / arr.length - rotateY;
+        const d = 360 * i / arr.length + rotateY;
         e.style.transform = `rotateY(${d}deg) translateZ(100px)`;
         e.style.opacity = revealAll ? 1 : Math.cos(d * Math.PI / 180);
       });
