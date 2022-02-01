@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=320; user-scalable=no">
+
+<style>
+  #container {
+    position: relative;
+    padding: 50px;
+    transform-style: preserve-3d;
+    user-select: none;
+  }
+
+  #group1,
+  #group2 {
+    height: 100px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  #group1 {
+    perspective-origin: bottom;
+  }
+
+  #group2 {
+    perspective-origin: top;
+    transform: translateY(20px);
+  }
+
+  .item {
+    border: 1px solid white;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .board {
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+</style>
+
+<div id="container">
+  <div class="board"></div>
+  <div id="group1">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+  <div id="group2">
+    <div class="item">1</div>
+    <div class="item">4</div>
+    <div class="item">3</div>
+    <div class="item">2</div>
+    <div class="item">1</div>
+    <div class="item">4</div>
+    <div class="item">3</div>
+    <div class="item">2</div>
+    <div class="item">1</div>
+    <div class="item">4</div>
+    <div class="item">3</div>
+    <div class="item">2</div>
+  </div>
+</div>
+
+<script>
+  window.onload = () => {
+    const step = 360 / group1.children.length;
+    let rotateY = 0;
+
+    const updateView = () => {
+      [...group1.children].forEach((e, i, arr) => {
+        const d = 360 * i / arr.length + rotateY;
+        e.style.transform = `rotateY(${d}deg) translateZ(100px)`;
+        e.style.opacity = Math.cos(d * Math.PI / 180);
+      });
+      [...group2.children].forEach((e, i, arr) => {
+        const d = 360 * i / arr.length - rotateY;
+        e.style.transform = `rotateY(${d}deg) translateZ(100px)`;
+        e.style.opacity = Math.cos(d * Math.PI / 180);
+      });
+    }
+
+    let mouseDown = false;
+    let prevClientX = -1;
+
+    
+    container.onmousedown = () => mouseDown = true;
+    container.ontouchstart = (e) => prevClientX = e.touches[0].clientX;
+   
+    container.onmousemove = (e) => {
+      if (mouseDown) {
+        rotateY += e.movementX;
+        updateView();
+      }
+    }
+
+    container.ontouchmove = (e) => {
+      if (prevClientX >= 0) {
+        rotateY += e.touches[0].clientX - prevClientX;
+        prevClientX = e.touches[0].clientX;
+        updateView();
+      }
+    }
+
+    container.ontouchend = container.onmouseup = () => {
+      mouseDown = false;
+      prevClientX = -1;
+      rotateY = Math.round(rotateY / step) * step;
+      updateView();
+    }
+
+    updateView();
+  }
+</script>
