@@ -2,11 +2,10 @@
   "name": "layout-sandbox",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel --no-cache",
-    "build": "parcel build"
+    "build": "parcel build --public-url ./"
   },
   "author": "",
   "license": "ISC",
