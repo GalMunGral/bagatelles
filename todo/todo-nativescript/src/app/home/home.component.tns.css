@@ -1,0 +1,8 @@
+StackLayout {
+  height: 70;
+  padding: 10;
+}
+.title {
+  font-size: 20;
+  font-weight: 500;
+}

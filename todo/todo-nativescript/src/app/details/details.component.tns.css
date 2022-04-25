@@ -1,0 +1,11 @@
+StackLayout {
+  padding: 20;
+}
+Label {
+  font-size: 20;
+}
+.title {
+  font-size: 30;
+  margin-bottom: 20;
+  font-weight: 500;
+}

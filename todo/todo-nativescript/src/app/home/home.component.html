@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let item of todos; index as i;" (click)="showDetail(i)">
+    <h2><a [routerLink]="['details', i]">{{item.title}}</a></h2>
+    <p>{{item.details}}</p>
+  </li>
+</ul>

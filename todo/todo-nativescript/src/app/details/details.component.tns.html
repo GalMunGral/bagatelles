@@ -1,0 +1,5 @@
+<ActionBar title="Details"></ActionBar>
+<StackLayout>
+  <Label class="title" [text]="(item$ | async)?.title"></Label>
+  <Label [text]="(item$ | async)?.details"></Label>
+</StackLayout>

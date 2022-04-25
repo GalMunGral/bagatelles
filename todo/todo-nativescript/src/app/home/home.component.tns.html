@@ -1,0 +1,9 @@
+<ActionBar title="Home"></ActionBar>
+<ListView [items]="todos">
+    <ng-template let-i="index" let-item="item">
+      <StackLayout [nsRouterLink]="['/details', i]" pageTransition="slideTop">
+        <Label class="title" [text]="item.title"></Label>
+        <Label [text]="item.details"></Label>
+      </StackLayout>
+    </ng-template>
+</ListView>
