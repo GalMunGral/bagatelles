@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/usernameInput"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Username" android:layout_marginTop="150dp" app:layout_constraintTop_toTopOf="parent"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/passwordInput"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Password"
+            android:layout_marginTop="40dp" app:layout_constraintTop_toBottomOf="@+id/usernameInput"/>
+    <Button
+            android:text="Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/registerButton"
+            android:layout_marginTop="40dp" app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+            app:layout_constraintStart_toStartOf="@+id/guideline"/>
+    <Button
+            android:text="Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginButton"
+            android:layout_marginTop="40dp" app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"/>
+    <android.support.constraint.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/guideline"
+            app:layout_constraintGuide_percent="0.22"/>
+    <android.support.constraint.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/guideline2"
+            app:layout_constraintGuide_percent="0.7786458"/>
+</android.support.constraint.ConstraintLayout>

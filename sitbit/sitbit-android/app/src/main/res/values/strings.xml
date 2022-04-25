@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sitting Time Tracker</string>
+    <string name="nothing">Nothing</string>
+    <string name="main">Main</string>
+    <string name="history">History</string>
+    <string name="server_ip">sitting-time-tracker.herokuapp.com</string>
+</resources>
