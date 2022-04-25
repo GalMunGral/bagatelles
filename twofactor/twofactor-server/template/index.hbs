@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  </head>
+  <body class="vw-100 vh-100 p-4 bg-light d-flex flex-column justify-content-around">
+
+    <h2 class="display-4 text-center">Two-Factor Authentication</h2>
+    <p class="text-center">Username: <b>{{username}}</b></p>
+    <div id="options" class="w-100 d-flex flex-column align-items-center justify-content-center">
+      <button id="btn_send_push" class="btn btn-primary my-3">Send a push to my phone</button>
+      <button class="btn btn-secondary my-3">Call/Text me</button>
+    </div>
+    <div id="success_msg" class="text-center text-success d-none">
+      <h4>Login Success!</h4>
+      <p>Redirect in 3 seconds.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js" integrity="sha256-i2Orhi397HWPn93rsCUTW8HBoso65vY/VNTllm9Kuqo=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
