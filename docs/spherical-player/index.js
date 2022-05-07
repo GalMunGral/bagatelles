@@ -154,7 +154,7 @@ video.ontimeupdate = () => {
     timeupdate = true;
 };
 video.src = "video.mp4";
-video.play();
+canvas.onclick = () => video.play();
 requestAnimationFrame(function render() {
     gl.useProgram(program);
     gl.uniform1i(uniformVSampler, 0);

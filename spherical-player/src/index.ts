@@ -187,7 +187,7 @@ video.ontimeupdate = () => {
 };
 
 video.src = "video.mp4";
-video.play();
+canvas.onclick = () => video.play();
 
 requestAnimationFrame(function render() {
   gl.useProgram(program);
