@@ -83,8 +83,8 @@ gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
 const camera = {
     alpha: PI / 4,
     theta: PI,
-    phi: -PI / 3,
-    pos: [0, 30 * sin(PI / 3), 30 * cos(PI / 3)],
+    phi: -PI / 4,
+    pos: [0, 30 * sin(PI / 4), 30 * cos(PI / 4)],
     get dir() {
         return [
             cos(this.phi) * sin(this.theta),
@@ -102,9 +102,16 @@ const camera = {
 const model = sphere(10, 25, 50);
 console.log(model);
 let theta = 0;
-setInterval(() => {
-    theta += 0.05;
-}, 30);
+// setInterval(() => {
+//   theta += 0.05;
+// }, 30);
+let down = false;
+window.onmousedown = () => (down = true);
+window.onmouseup = () => (down = false);
+window.onmousemove = (e) => {
+    if (down)
+        theta += 0.005 * e.movementX;
+};
 const speed = 0.05;
 window.onkeydown = (e) => {
     switch (e.key) {
