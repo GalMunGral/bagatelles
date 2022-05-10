@@ -1,0 +1,21 @@
+{
+  "name": "parser-combinator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run clean && npm run build && node build/index.js",
+    "build": "tsc",
+    "clean": "rm -rf build && rm -rf output/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^15.3.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5"
+  }
+}

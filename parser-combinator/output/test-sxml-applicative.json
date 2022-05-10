@@ -1,0 +1,58 @@
+{
+  "result": {
+    "name": "screen",
+    "attributes": [
+      {
+        "name": "a",
+        "value": ""
+      },
+      {
+        "name": "b",
+        "value": "1"
+      },
+      {
+        "name": "cde",
+        "value": "test"
+      }
+    ],
+    "children": [
+      {
+        "name": "window1",
+        "attributes": [
+          {
+            "name": "key",
+            "value": "abc123"
+          }
+        ],
+        "children": []
+      },
+      {
+        "name": "window2",
+        "attributes": [],
+        "children": [
+          {
+            "name": "button",
+            "attributes": [
+              {
+                "name": "red",
+                "value": ""
+              }
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "window3",
+        "attributes": [
+          {
+            "name": "hidden",
+            "value": ""
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  "rest": ""
+}

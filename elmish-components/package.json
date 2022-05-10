@@ -1,0 +1,26 @@
+{
+  "name": "synk",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.172",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "prettier": "^2.3.0",
+    "tailwindcss": "^2.1.2",
+    "typescript": "^4.2.3",
+    "vite": "^2.3.4"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "immer": "^9.0.2",
+    "incremental-dom": "^0.7.0",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "rxjs": "^7.3.0"
+  }
+}

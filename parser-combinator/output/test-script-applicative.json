@@ -1,0 +1,196 @@
+{
+  "result": {
+    "body": [
+      {
+        "condition": {
+          "left": {
+            "left": {
+              "left": {
+                "name": "a"
+              },
+              "op": {
+                "value": "+"
+              },
+              "right": {
+                "left": {
+                  "name": "c"
+                },
+                "op": {
+                  "value": "+"
+                },
+                "right": {
+                  "name": "d"
+                }
+              }
+            },
+            "op": {
+              "value": "*"
+            },
+            "right": {
+              "type": "number",
+              "value": "5"
+            }
+          },
+          "op": {
+            "value": "<"
+          },
+          "right": {
+            "type": "number",
+            "value": "0"
+          }
+        },
+        "consequent": {
+          "statements": [
+            {
+              "expression": {
+                "left": {
+                  "name": "result"
+                },
+                "op": {
+                  "value": "="
+                },
+                "right": {
+                  "condition": {
+                    "left": {
+                      "left": {
+                        "left": {
+                          "name": "a"
+                        },
+                        "op": {
+                          "value": "+"
+                        },
+                        "right": {
+                          "left": {
+                            "name": "c"
+                          },
+                          "op": {
+                            "value": "+"
+                          },
+                          "right": {
+                            "name": "d"
+                          }
+                        }
+                      },
+                      "op": {
+                        "value": "%"
+                      },
+                      "right": {
+                        "type": "number",
+                        "value": "2"
+                      }
+                    },
+                    "op": {
+                      "value": "=="
+                    },
+                    "right": {
+                      "type": "number",
+                      "value": "0"
+                    }
+                  },
+                  "consequent": {
+                    "type": "string",
+                    "value": "\"a\""
+                  },
+                  "alternative": {
+                    "type": "string",
+                    "value": "\"b\""
+                  }
+                }
+              }
+            },
+            {
+              "expression": {
+                "callee": {
+                  "name": "doSomething"
+                },
+                "args": [
+                  {
+                    "name": "result"
+                  },
+                  {
+                    "left": {
+                      "name": "a"
+                    },
+                    "op": {
+                      "value": "/"
+                    },
+                    "right": {
+                      "name": "c"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "alternative": {
+          "statements": [
+            {
+              "expression": {
+                "callee": {
+                  "name": "doSomethingElse"
+                },
+                "args": [
+                  {
+                    "condition": {
+                      "name": "a"
+                    },
+                    "consequent": {
+                      "type": "number",
+                      "value": "1"
+                    },
+                    "alternative": {
+                      "type": "number",
+                      "value": "0"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "condition": {
+                "type": "boolean",
+                "value": "true"
+              },
+              "consequent": {
+                "statements": [
+                  {
+                    "expression": {
+                      "left": {
+                        "name": "a"
+                      },
+                      "op": {
+                        "value": "="
+                      },
+                      "right": {
+                        "type": "number",
+                        "value": "100"
+                      }
+                    }
+                  },
+                  {
+                    "expression": {
+                      "callee": {
+                        "name": "doMoreThings"
+                      },
+                      "args": [
+                        {
+                          "type": "number",
+                          "value": "100"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "alternative": {
+                "statements": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "rest": ""
+}
